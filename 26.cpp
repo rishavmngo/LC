@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
   int removeDuplicates(vector<int> &nums) {
-    int prevNumber = INT_MAX;
+    int prevNumber = INT_MIN;
     int ans = 0;
 
     for (int i = 0, ip = 0; i < nums.size(); ++i) {
@@ -17,7 +17,6 @@ public:
         ans++;
       }
     }
-
     return ans;
   }
 };
@@ -25,6 +24,7 @@ public:
 int main(void) {
   Solution sol;
   vector<int> v = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+
   cout << sol.removeDuplicates(v) << endl;
 
   for (auto x : v) {
